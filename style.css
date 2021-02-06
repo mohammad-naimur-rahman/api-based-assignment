@@ -1,0 +1,82 @@
+#basic-addon2 {
+  cursor: pointer;
+}
+#food-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.food-box {
+  flex-basis: 250px;
+  margin: 15px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 3px 6px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.food-icon {
+  object-fit: cover;
+}
+.food-icon img {
+  width: 100%;
+  height: auto;
+}
+.food-name {
+  padding: 10px 0;
+}
+.container {
+  position: relative;
+}
+#details {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.detail-modal {
+  position: fixed;
+  height: auto;
+  width: 300px;
+  background: #fff;
+  left: 50%;
+  transform: translate(-50%, -40px) scale(0.9);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.detail-back {
+  margin: 10px auto;
+  width: 80%;
+  background-color: lime;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.detail-img-container {
+  text-align: center;
+}
+.detail-img {
+  width: 100%;
+  border-radius: 8px;
+}
+.detail-heading {
+  font-weight: bold;
+  margin-left: 10px;
+}
+.detail-heading-2 {
+  margin-left: 10px;
+}
+.detail-ul {
+  list-style: none;
+}
+.detail-ul li {
+  margin: 0;
+  padding: 0;
+}
+.blur {
+  filter: blur(2px);
+}
