@@ -1,6 +1,7 @@
 const showFood = () => {
     const searchInput = document.getElementById('searchInput').value;
     const foodItems = document.getElementById('food-items');
+    foodItems.innerHTML = null;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
         .then(res => res.json())
         .then(data => {
