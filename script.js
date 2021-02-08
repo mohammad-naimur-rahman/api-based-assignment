@@ -58,7 +58,7 @@ const generateIngredients = item => {
     let ingredientList = ``;
     for (const ingredient in item) {
         if (ingredient.includes('strIngredient') && item[ingredient] != '' && item[ingredient] != null) {
-            const li = `<li>${item[ingredient]}</li>`;
+            const li = `<li><i class="fas fa-check-square" style="font-size: 18px; color: lime"></i> ${item[ingredient]}</li>`;
             ingredientList += li;
         }
     }
