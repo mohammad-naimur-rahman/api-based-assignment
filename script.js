@@ -24,12 +24,12 @@ const showFood = () => {
 }
 
 const showDetails = name => {
-    const container = document.getElementById('details');
+    const detailsContainer = document.getElementById('details');
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
         .then(res => res.json())
         .then(data => {
             const item = data.meals[0];
-            container.innerHTML = `
+            detailsContainer.innerHTML = `
             <div class = "detail-modal">
                 <p class = "detail-back" onclick="hideDetails()">&larr; Back to main page </p>
                 <div class="detail-img-container">
@@ -55,12 +55,12 @@ const hideDetails = () => {
 }
 
 const generateIngredients = item => {
-    let IngredientList = ``;
+    let ingredientList = ``;
     for (const ingredient in item) {
         if (ingredient.includes('strIngredient') && item[ingredient] != '' && item[ingredient] != null) {
             const li = `<li>${item[ingredient]}</li>`;
-            IngredientList += li;
+            ingredientList += li;
         }
     }
-    return IngredientList;
+    return ingredientList;
 }
