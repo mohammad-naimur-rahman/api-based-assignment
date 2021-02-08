@@ -39,12 +39,16 @@
 .detail-modal {
   position: fixed;
   height: auto;
-  width: 300px;
+  width: 400px;
   background: #fff;
   left: 50%;
-  transform: translate(-50%, -40px) scale(0.9);
+  transform: translateX(-50%);
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.detail-des {
+  height: 300px;
+  overflow-y: scroll;
 }
 .detail-back {
   margin: 10px auto;
@@ -57,11 +61,13 @@
   font-weight: bold;
 }
 .detail-img-container {
-  text-align: center;
+  object-fit: cover;
 }
 .detail-img {
   width: 100%;
+  height: 300px;
   border-radius: 8px;
+  object-fit: cover;
 }
 .detail-heading {
   font-weight: bold;

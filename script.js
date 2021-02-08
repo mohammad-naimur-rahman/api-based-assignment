@@ -31,34 +31,17 @@ const showDetails = name => {
             const item = data.meals[0];
             container.innerHTML = `
             <div class = "detail-modal">
-                <p class = "detail-back" onclick="hideDetails()">&larr; &larr; Back to main page </p>
+                <p class = "detail-back" onclick="hideDetails()">&larr; Back to main page </p>
                 <div class="detail-img-container">
                     <img class="detail-img" src="${item.strMealThumb}" alt="">
                 </div>
-                <h2 class="detail-heading">${item.strMeal}</h2>
-                <h5 class="detail-heading-2">Ingredients</h5>
-                <ul class="detail-ul">
-                    <li class="detai-li">${item.strIngredient1}</li>
-                    <li class="detai-li">${item.strIngredient2}</li>
-                    <li class="detai-li">${item.strIngredient3}</li>
-                    <li class="detai-li">${item.strIngredient4}</li>
-                    <li class="detai-li">${item.strIngredient5}</li>
-                    <li class="detai-li">${item.strIngredient6}</li>
-                    <li class="detai-li">${item.strIngredient7}</li>
-                    <li class="detai-li">${item.strIngredient8}</li>
-                    <li class="detai-li">${item.strIngredient9}</li>
-                    <li class="detai-li">${item.strIngredient10}</li>
-                    <li class="detai-li">${item.strIngredient11}</li>
-                    <li class="detai-li">${item.strIngredient12}</li>
-                    <li class="detai-li">${item.strIngredient13}</li>
-                    <li class="detai-li">${item.strIngredient14}</li>
-                    <li class="detai-li">${item.strIngredient15}</li>
-                    <li class="detai-li">${item.strIngredient16}</li>
-                    <li class="detai-li">${item.strIngredient17}</li>
-                    <li class="detai-li">${item.strIngredient18}</li>
-                    <li class="detai-li">${item.strIngredient19}</li>
-                    <li class="detai-li">${item.strIngredient20}</li>
-                </ul>
+                <div class="detail-des">
+                    <h2 class="detail-heading">${item.strMeal}</h2>
+                    <h5 class="detail-heading-2">Ingredients</h5>
+                    <ul class="detail-ul">
+                        ${generateIngredients(item)}
+                    </ul>
+                </div>
             </div>
             `
         })
@@ -69,4 +52,15 @@ btn.addEventListener('click', showFood);
 
 const hideDetails = () => {
     document.querySelector('.detail-modal').style.display = 'none';
+}
+
+const generateIngredients = item => {
+    let IngredientList = ``;
+    for (const ingredient in item) {
+        if (ingredient.includes('strIngredient') && item[ingredient] != '' && item[ingredient] != null) {
+            const li = `<li>${item[ingredient]}</li>`;
+            IngredientList += li;
+        }
+    }
+    return IngredientList;
 }
